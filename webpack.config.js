@@ -1,16 +1,15 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
     entry: './app/index.js',
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
-
     devServer: {
-      contentBase: './public',
-      inline: true,
-      port: 9000
+        contentBase: './public',
+        inline: true,
+        port: 9000,
     },
     module: {
         loaders: [{
@@ -18,8 +17,8 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel-loader',
             query: {
-                presets: ['es2015', 'react']
-            }
-        }]
-    }
-}
+                presets: ['es2015', 'react'],
+            },
+        }],
+    },
+};

@@ -6,8 +6,8 @@ module.exports = {
         "import"
     ],
     "env": {
-    "browser": true
-  },
+        "browser": true
+    },
     "rules": {
         "indent": ["error", 4],
         // Allow JSX in JS
