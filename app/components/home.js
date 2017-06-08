@@ -2,11 +2,11 @@ import React from 'react';
 import RaisedButton from 'material-ui/RaisedButton';
 
 const style = {
-  margin: 12,
+    margin: 12,
 };
 
-const MyAwesomeReactComponent = () => (
+const Home = () => (
   <RaisedButton label="Default" style={style} />
 );
 
-export default MyAwesomeReactComponent
+export default Home;
