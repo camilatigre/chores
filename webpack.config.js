@@ -16,6 +16,7 @@ module.exports = {
         contentBase: './public',
         inline: true,
         port: 9000,
+        historyApiFallback: true,
     },
     module: {
         loaders: [{
