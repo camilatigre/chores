@@ -2,30 +2,11 @@ import React, { Component } from 'react';
 import FontIcon from 'material-ui/FontIcon';
 import Paper from 'material-ui/Paper';
 import { BottomNavigation, BottomNavigationItem } from 'material-ui/BottomNavigation';
-import { Route } from 'react-router-dom';
 import { withRouter } from 'react-router';
 
 const homeIcon = <FontIcon className="material-icons">home</FontIcon>;
 const addChoresIcon = <FontIcon className="material-icons">add_circle_outline</FontIcon>;
 const loginIcon = <FontIcon className="material-icons">account_box</FontIcon>;
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
-);
-
-const AddChores = () => (
-  <div>
-    <h2>AddChores</h2>
-  </div>
-);
-
-const Login = () => (
-  <div>
-    <h2>Login</h2>
-  </div>
-);
 
 class Menu extends Component {
 
@@ -68,9 +49,6 @@ class Menu extends Component {
                 </BottomNavigation>
               }
             </Paper>
-            <Route exact={true} path="/" component={Home} />
-            <Route exact={true} path="/add" component={AddChores} />
-            <Route path="/login" component={Login} />
           </div>
         );
     }
