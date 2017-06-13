@@ -1,25 +1,35 @@
-var path = require('path');
+const path = require('path');
 
 module.exports = {
-    entry: './app/index.js',
+    entry: [
+        // Set up an ES6-ish environment
+        'babel-polyfill',
+
+        // Add your application's scripts below
+        './app/index.js',
+    ],
     output: {
         path: path.resolve(__dirname, 'public'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
-
     devServer: {
-      contentBase: './public',
-      inline: true,
-      port: 9000
+        contentBase: './public',
+        inline: true,
+        port: 9000,
+        historyApiFallback: true,
     },
     module: {
         loaders: [{
             test: /\.js$/,
             exclude: /node_modules/,
+            include: [
+                path.resolve(__dirname, 'app'),
+            ],
             loader: 'babel-loader',
             query: {
-                presets: ['es2015', 'react']
-            }
-        }]
-    }
-}
+                plugins: ['transform-runtime'],
+                presets: ['es2015', 'stage-0', 'react'],
+            },
+        }],
+    },
+};

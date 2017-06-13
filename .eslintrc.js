@@ -6,8 +6,17 @@ module.exports = {
         "import"
     ],
     "env": {
-    "browser": true
-  },
+        "browser": true,
+        "es6": true
+    },
+    "parser": "babel-eslint",
+    "parserOptions": {
+        "ecmaVersion": 7,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
     "rules": {
         "indent": ["error", 4],
         // Allow JSX in JS
